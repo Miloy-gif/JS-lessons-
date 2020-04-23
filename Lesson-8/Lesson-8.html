@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson-8</title>
+</head>
+<body>
+<!--1;-->
+<form action="#" name="formOne" method="post">
+  <p><b>Proszę zostawić swoje opinie:</b></p>
+  <p><textarea name="opinie" cols="40" rows="5"></textarea></p>
+  <input type="submit" value="Wyslać">
+</form>
+</br>
+</br>
+
+<hr>
+<!--2;-->
+<form id="contactForm" method="post">
+  <h2 id="h2">Application Form</h2>
+  <div class="row">
+    <label>Full Name</label>
+    </br>
+    <input type="text" name="name">
+    <div class="error" id="nameErr"></div>
+  </div>
+  <div class="row">
+    <label>Email Address</label>
+    </br>
+    <input type="text" name="email">
+    <div class="error" id="emailErr"></div>
+  </div>
+  <div class="row">
+    <label>Mobile Number</label>
+    </br>
+    <input type="text" name="mobile" maxlength="10">
+    <div class="error" id="mobileErr"></div>
+  </div>
+  <div class="row">
+    <label>Country</label>
+    </br>
+    <select name="country">
+      <option>-----</option>
+      <option>Australia</option>
+      <option>India</option>
+      <option>United States</option>
+      <option>United Kingdom</option>
+      <option>France</option>
+    </select>
+    <div class="error" id="countryErr"></div>
+  </div>
+  </br>
+  <div class="row">
+    <label>Gender</label>
+    </br>
+    <div class="form-inline">
+      <label><input type="radio" name="gender" value="male"> Male</label>
+      <label><input type="radio" name="gender" value="female"> Female</label>
+    </div>
+    <div class="error" id="genderErr"></div>
+    </br>
+  </div>
+  <div class="row">
+    <label>Hobbies <i>(Optional)</i></label>
+    <div class="form-inline">
+      <label><input type="checkbox" name="hobbies[]" value="sports"> Sports</label>
+      <label><input type="checkbox" name="hobbies[]" value="movies"> Movies</label>
+      <label><input type="checkbox" name="hobbies[]" value="music"> Music</label>
+    </div>
+  </div>
+  <div>
+      <input type="checkbox" id="fromUs" checked>
+    <label>Receive new notifications from us</label>
+  </div>
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+</form>
+<hr>
+</br>
+<form action="#" id="formText">
+  <p>
+    <textarea id="comments" cols="40" rows="3"></textarea>
+  </p>
+  <p>
+    <input type="button" id="save" value="Transmit">
+  </p>
+</form>
+<hr>
+
+<h2>JavaScript Closures</h2>
+
+<p>Counting with a local variable.</p>
+
+<button type="button" onclick="myFunction()">Count!</button>
+
+<p id="demo">0</p>
+
+
+
+<script src="Lesson-8.js"></script>
+</body>
+</html>
