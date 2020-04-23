@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson-9</title>
+</head>
+<body>
+<p><h4 id="h4">Lesson-9 (Java Script - Promise (resolve, reject)</h4></p>
+<hr>
+To summarize, the executor should perform a job (usually something that takes time) and then call resolve or reject
+  to change the state of the corresponding promise object. A promise that is either resolved or rejected is called
+  “settled”, as opposed to an initially “pending” promise.
+<p>Функция, переданная в конструкцию new Promise, называется исполнитель (executor). Когда Promise создаётся, она
+  запускается автоматически. Она должна содержать «создающий» код, который когда-нибудь создаст результат.
+  В терминах нашей аналогии: исполнитель – это «певец».
+  Её аргументы resolve и reject – это колбэки, которые предоставляет сам JavaScript. Наш код – только внутри
+  исполнителя.<br>
+Когда он получает результат, сейчас или позже – не важно, он должен вызвать один из этих колбэков:<br>
+<strong>resolve(value)</strong> — если работа завершилась успешно, с результатом value.<br>
+<strong>reject(error)</strong> — если произошла ошибка, error – объект ошибки.
+  Итак, исполнитель запускается автоматически, он должен выполнить работу, а затем вызвать resolve или reject.
+
+<p>У объекта promise, возвращаемого конструктором new Promise, есть внутренние свойства:<br>
+  <i>state</i> («состояние») — вначале "pending" («ожидание»), потом меняется на "fulfilled" («выполнено успешно»)
+  при вызове resolve или на "rejected" («выполнено с ошибкой») при вызове reject.<br>
+  <i>result</i> («результат») — вначале undefined, далее изменяется на value при вызове resolve(value) или на
+   error при вызове reject(error).
+</p>
+<p>Ключевое слово async перед объявлением функции:<br>
+  Обязывает её всегда возвращать промис.
+  Позволяет использовать await в теле этой функции.
+  Ключевое слово await перед промисом заставит JavaScript дождаться его выполнения, после чего:
+  Если промис завершается с ошибкой, будет сгенерировано исключение, как если бы на этом месте находилось throw.
+  Иначе вернётся результат промиса.
+  Вместе они предоставляют отличный каркас для написания асинхронного кода. Такой код легко и писать, и читать.
+  Хотя при работе с async/await можно обходиться без promise.then/catch, иногда всё-таки приходится использовать
+  эти методы (на верхнем уровне вложенности, например). Также await отлично работает в сочетании с Promise.all,
+  если необходимо выполнить несколько задач параллельно.
+
+</p>
+
+
+<script src="lesson-9.js"></script>
+</body>
+</html>
